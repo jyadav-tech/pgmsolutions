@@ -1,5 +1,20 @@
 What is a Docker and why is it used?
-Docker is a software platform that allows you to build, test, and deploy applications quickly. Docker packages software into standardized units called containers that have everything the software needs to run including libraries, system tools, code, and runtime.
+Docker is a software platform that uses containers to package and run applications. It allows you to build, test, and deploy applications quickly. Think of a container as a lightweight, portable, and self-sufficient package that includes everything an application needs to run: the code, a runtime, libraries, and system tools.
+
+This approach ensures that an application will run consistently, regardless of the environment it's running in. It solves the classic "it works on my machine" problem by making sure the application's environment is the same everywhere.
+
+Key Concepts:
+Images: A Docker image is a read-only template that contains the instructions for creating a Docker container. It's like a blueprint for an application. You can create your own images or use pre-built ones from a public registry like Docker Hub.
+Docker image is a template, but it's not a simple text file. An image is a read-only template that contains the instructions AND the actual application's code, a runtime, libraries, and any other dependencies. It's a complete, portable "snapshot" of an application.
+
+Containers: A Docker container is a runnable instance of an image. It's the actual running application with all its dependencies isolated from the host machine and other containers.
+
+Docker Engine: The Docker Engine is the core technology that builds and runs containers. It's a client-server application with three main components: the server (the Docker daemon), a REST API, and a command-line interface (CLI) client.
+
+How Docker Works:
+Docker uses a client-server architecture. The Docker client (CLI) communicates with the Docker daemon (server) to manage containers. When you run a command like docker run, the client tells the daemon to create and start a new container from a specified image.
+
+A key technology behind Docker is the containerization offered by the Linux kernel. Docker leverages features like namespaces (to provide process isolation) and cgroups (control groups, to limit resource usage) to create these isolated environments.
 
 My understanding: Assume Docker is an application like Git. It has it's own space to contain images.
 docker --version
