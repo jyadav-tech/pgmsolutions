@@ -10,6 +10,7 @@ Docker image is a template, but it's not a simple text file. An image is a read-
 Containers: A Docker container is a runnable instance of an image. It's the actual running application with all its dependencies isolated from the host machine and other containers.
 
 Docker Engine: The Docker Engine is the core technology that builds and runs containers. It's a client-server application with three main components: the server (the Docker daemon), a REST API, and a command-line interface (CLI) client.
+
 The Docker CLI communicates with the Docker daemon using a REST API exposed by the daemon itself, typically over a Unix socket (/var/run/docker.sock) on Linux systems.
 Step-by-step:
 1. Docker CLI (client)
@@ -53,7 +54,7 @@ Final Takeaway:
 👉 As an architect, this helps you:
     →Integrate Docker into CI/CD pipelines
     →Automate infrastructure
-    →Debug issues beyond “just commands”
+    →Debug issues beyond "just commands"
 
 2. Everything can be automated (without CLI)
 For example:
@@ -63,7 +64,7 @@ For example:
 👉 They don't "run docker commands" — they:
     →Call APIs
     →Use SDKs (Go, Python, etc.)
-That’s a big mental shift from developer → architect.
+That's a big mental shift from developer → architect.
 
 3. This is the foundation of Kubernetes
 Kubernetes doesn't use Docker CLI at all.
