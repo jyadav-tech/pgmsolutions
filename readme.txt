@@ -88,6 +88,18 @@ ll -a /var/www/html/2018/test    /* Lists all files/folders of test directory in
 ll -at /var/www/html/2018/test   /* -t => sort by modification time, newest first */
 ll myfile*			 /* It lists only those files/folders whose name starts with "myfile" having depth=1
 
+jitendray@jitendray-ubt:/var/run$ ls -l *uu*    /* You are inside folder /var/run and execute the command "ls -l *uu*" */
+Output:
+total 0
+srw-rw-rw- 1 root root 0 Jun 19 13:58 request
+What's happening is that we have a folder inside /var/run that contains "uu" in its name (most likely directory uuidd, which is very common in /var/run).
+When you pass a folder name to ls, instead of showing you the folder itself, ls automatically opens it up and shows you what is inside that folder uuidd.
+
+ls -ld *uu* 
+/* When you use ls -ld *uu*, the -d flag doesn't mean "only show directories". It actually means: "If a match is a directory, show the directory itself 
+instead of looking inside it". If a match is a regular file, it just displays it normally. So, the exact same command will perfectly show both files and 
+folders that match your pattern. */ 
+
 /*** Copy a file xyz.php but with different name jitendray.php, means both file would have same content ***/
 cp xyz.php jitendray.php
 /* Copy each & every file/folder recursively of one directory to another directory. Here only files/folders from/inside "ci226" would be copied not "ci226". Here if you don't use option "-R" then only files of "ci226" would be copied not folders. */
