@@ -92,13 +92,10 @@ jitendray@jitendray-ubt:/var/run$ ls -l *uu*    /* You are inside folder /var/ru
 Output:
 total 0
 srw-rw-rw- 1 root root 0 Jun 19 13:58 request
-What's happening is that we have a folder inside /var/run that contains "uu" in its name (most likely directory uuidd, which is very common in /var/run).
-When you pass a folder name to ls, instead of showing you the folder itself, ls automatically opens it up and shows you what is inside that folder uuidd.
+What's happening is that we have a folder inside /var/run that contains "uu" in its name (most likely directory uuidd, which is very common in /var/run). When you pass a folder name to ls, instead of showing you the folder itself, ls automatically opens it up and shows you what is inside that folder uuidd.
 
 ls -ld *uu* 
-/* When you use ls -ld *uu*, the -d flag doesn't mean "only show directories". It actually means: "If a match is a directory, show the directory itself 
-instead of looking inside it". If a match is a regular file, it just displays it normally. So, the exact same command will perfectly show both files and 
-folders that match your pattern. */ 
+/* When you use ls -ld *uu*, the -d flag doesn't mean "only show directories". It actually means: "If a match is a directory, show the directory itself instead of looking inside it". If a match is a regular file, it just displays it normally. So, the exact same command will perfectly show both files and folders that match your pattern. */ 
 
 /*** Copy a file xyz.php but with different name jitendray.php, means both file would have same content ***/
 cp xyz.php jitendray.php
